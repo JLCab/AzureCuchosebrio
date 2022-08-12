@@ -1,0 +1,9 @@
+{
+	"name": "DFCuchosebrio",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "61817db9-b80c-4bc0-9c4c-3937e46df954",
+		"tenantId": "65fba8e5-6abe-451f-aba5-446540a8876e"
+	}
+}
