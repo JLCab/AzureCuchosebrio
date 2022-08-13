@@ -1,0 +1,9 @@
+{
+	"name": "ADFCuchodelosdatos",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7eb1c47f-263e-45b0-886d-01b0ac86fbdb",
+		"tenantId": "65fba8e5-6abe-451f-aba5-446540a8876e"
+	}
+}
