@@ -69,15 +69,52 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": "NuevosDatos",
+										"wildcardFileName": {
+											"value": "@item()['name']",
+											"type": "Expression"
+										},
 										"enablePartitionDiscovery": false
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "AzureSqlSink",
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"tableOption": "autoCreate",
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
 								{
 									"referenceName": "Parquet_ExampleFull",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SistemaDeArchivos": "archivosexamen",
+										"RutaDeArchivos": "NuevosDatos"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "AzureSqlTable_ExampleFull",
+									"type": "DatasetReference",
+									"parameters": {
+										"Tabla": {
+											"value": "@concat(replace(item()['name'],'.parquet',''),'_NuevaTabla')",
+											"type": "Expression"
+										},
+										"Esquema": "SalesLT"
+									}
 								}
 							]
 						}
