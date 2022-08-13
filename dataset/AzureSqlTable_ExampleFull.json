@@ -1,0 +1,12 @@
+{
+	"name": "AzureSqlTable_ExampleFull",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_Example2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
