@@ -19,8 +19,8 @@
 						"referenceName": "Parquet_ExampleFull",
 						"type": "DatasetReference",
 						"parameters": {
-							"SistemaDeArchivos": "almacenamientoexamen",
-							"RutaDeArchivos": "archivosexamen"
+							"SistemaDeArchivos": "archivosexamen",
+							"RutaDeArchivos": "NuevosDatos"
 						}
 					},
 					"fieldList": [
